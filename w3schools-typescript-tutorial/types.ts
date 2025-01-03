@@ -32,3 +32,8 @@ if (typeof unk == "object" && unk != null) { // type assertion before calling ac
     //unk.action(); // 'unk' is possibly 'null'
     (unk as { action: () => void }).action(); // assert unk to { action: () => void } type before calling action().
 }
+
+// compare with golang interface{} type
+// In Go, interface{} is a type that can hold any type of value. It is similar to unknown type in TypeScript.
+// both can hold any type of value, need to assert the type before using it.
+// difference is that TypeScript checks the type at compile time, but Go checks the type at runtime.
