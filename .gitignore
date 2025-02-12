@@ -133,3 +133,6 @@ dist
 /w3schools-nodejs-tutorial/txt/mynewfile2.txt
 /w3schools-nodejs-tutorial/txt/mynewfile3.txt
 /w3schools-nodejs-tutorial/txt/myrenamedfile.txt
+package.json
+package-lock.json
+tsconfig.json
