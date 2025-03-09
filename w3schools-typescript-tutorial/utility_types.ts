@@ -10,14 +10,14 @@ interface Point {
 let pointPart: Partial<Point> = {};
 
 interface Vehicle {
-    make: string;
+    name: string;
     model: string;
     mileage?: number;
 }
 
 // Required<Type> - Constructs a type consisting of all properties of Type set to require.
 let myCar: Required<Vehicle> = {
-    make: "Toyota",
+    name: "Toyota",
     model: "Corolla",
     mileage: 30000 // Error: Property 'mileage' is missing in type '{ make: string; model: string; }' but required in type 'Required<Vehicle>'.
 }
