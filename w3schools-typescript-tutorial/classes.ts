@@ -57,7 +57,7 @@ class Square extends Rectangle {
 // Overriding: A subclass can override the methods of the parent class by providing a new implementation with the same method signature.
 // A method signature in TypeScript (and other programming languages) includes the method's name, the parameter list (with types), and the return type. It does not include the method's body or implementation.
 class Triangle implements Shape {
-    constructor(private base: number, private height: number) {}
+    constructor(protected base: number, protected height: number) {}
 
     public getArea(): number {
         return 0.5 * this.base * this.height;
@@ -68,6 +68,23 @@ class Triangle implements Shape {
     // toString method is replaced the default implementation of the parent class.
     public toString(): string {
         return `Triangle { base: ${this.base}, height: ${this.height} }`;
+    }
+}
+
+class SmallTriangle extends Triangle {
+    constructor(base: number, height: number) {
+        super(base, height);
+    }
+
+    // Overriding the getArea method of the parent class.
+    // `override` keyword is used to indicate that the method is overriding a method of the parent class.
+    // It's optional but recommended to use it for clarity.
+    public override getArea(): number {
+        return super.getArea() / 2; // super keyword is used to call the overridden method of the parent class.
+    }
+
+    public override toString(): string {
+        return `SmallTriangle { base: ${this.base}, height: ${this.height} }`;
     }
 }
 
